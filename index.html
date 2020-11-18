@@ -5,3 +5,29 @@
 </head>
 <body>
 </body>
+
+var moveBack = move('#example-13 .box')
+  .set('background-color', 'white')
+  .x(0);
+
+move('#example-13 .box')
+  .set('background-color', 'red')
+  .x(500)
+  .then(moveBack)
+  .end();
+
+move('#example-13 .box2')
+  .set('background-color', 'red')
+  .x(500)
+  .scale(.5)
+  .rotate(60)
+    .then()
+      .rotate(30)
+      .scale(1.5)
+      .set('border-radius', 5)
+      .set('background-color', 'white')
+      .then()
+        .set('opacity', 0)
+        .pop()
+      .pop()
+  .end();
